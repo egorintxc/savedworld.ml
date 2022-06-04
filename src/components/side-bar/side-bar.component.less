@@ -1,43 +1,120 @@
 .navigation {
-  width: 350px;
+  margin-top: 30px;
+  padding: 0 50px;
+  display: flex;
+  width: 100%;
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
-  height: 100vh;
-  background: #2E2E48;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
 
   &__logo {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 190px;
 
-    .icon {
-      margin-bottom: 20px;
+    img {
+      border-radius: 12px;
+      height: 50px;
+      width: 50px;
+      margin-right: 12px;
     }
 
-    .title {
-      margin-bottom: 4px;
-      font-weight: 600;
-      font-size: 22px;
-      line-height: 33px;
-      color: #FFFFFF;
-    }
-
-    .sub-title {
+    span {
       font-style: normal;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 21px;
-      color: rgba(255, 255, 255, 0.4);
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 43px;
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+
+    &-s {
+      background: linear-gradient(94.77deg, #48B760 0%, #6BB748 100%);
+
+    }
+
+    &-w {
+      background: linear-gradient(90deg, #A748B7 37.53%, #882398 90.36%);
 
     }
   }
 
-  &__bar {
-    margin-top: 50px;
+  &__list {
+    display: flex;
+
+    .link {
+      cursor: pointer;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      margin-right: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #828282;
+      border-radius: 5px;
+      padding: 0 5px;
+      height: 25px;
+
+      &:hover {
+        color: #fff;
+        background: #8B279B;
+      }
+
+      &._active {
+        color: #fff;
+        background: #8B279B;
+
+      }
+    }
+  }
+
+  &__buttons {
+    position: relative;
+
+    .button-line {
+      position: absolute;
+      top: -22px;
+      left: -15px;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      //text-align: center;
+      color: #E5E5E5;
+      box-shadow: 0 4px 20px rgba(115, 205, 0, 0.1);
+      width: 180px;
+      height: 44px;
+      border-radius: 22px;
+      background: url('/assets/mask-button.png'), linear-gradient(90deg, #A748B7 37.53%, #882398 90.36%);;
+    }
+
+    .button-sub {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      display: flex;
+      padding-top: 29px;
+      justify-content: center;
+      text-align: center;
+      color: #2892C8;
+      width: 164px;
+      height: 58px;
+      background: #F1FBF8;
+      border-radius: 0px 0px 22px 22px;
+    }
   }
 }
