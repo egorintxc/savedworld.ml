@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.app {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 350px 1fr;
+  //TODO: при 700px скрывать навигацию в попап
+  &__container {
+    max-width: calc(100vw - 350px);
+    min-width: 350px;
+  }
+}

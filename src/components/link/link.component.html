@@ -1,0 +1,10 @@
+<div class="navigation-link">
+  <div class="navigation-link__selected"
+       [class._active]="isActive"></div>
+  <svg-icon class="navigation-link__icon"
+            [src]="returnCurrentLink()">
+  </svg-icon>
+  <span class="navigation-link__title">
+    {{title}}
+  </span>
+</div>
