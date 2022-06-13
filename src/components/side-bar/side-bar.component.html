@@ -1,23 +1,49 @@
 <div class="navigation">
-<!--  <svg-icon  src="assets/icons/logo.svg"></svg-icon>-->
   <div class="navigation__logo">
-    <img src="/assets/logo.jpg" alt="">
-    <span class="navigation__logo-s">S</span>
-    <span class="navigation__logo-w">W</span>
+    <svg-icon src="/assets/logo.svg"></svg-icon>
+    <div class="text">
+      <span class="text__first">saved</span>
+      <span class="text__second">world</span>
+      <img class="text__stars"
+           src="/assets/green-stars.png"
+           alt="stars"/>
+    </div>
   </div>
   <div class="navigation__list">
-    <div class="link"
-         [class._active]="true">
-      Главная
-    </div>
-    <div class="link">Информация</div>
-    <div class="link">Наши сервера</div>
-    <div class="link">Правила</div>
-    <div class="link">Стримеры</div>
-    <div class="link">Поддержать</div>
+    <ng-container *ngFor="let item of linkArray">
+      <div class="link"
+           (click)="changePosition($event, item.id)"
+           [class._active]="item.isActive">
+        <span>{{item.title}}</span>
+        <div *ngIf="item.isActive">
+          <img class="star _low"
+               [class._low-active]="item.isActive"
+               [class._low-deactive]="item.isDeActive"
+               src="/assets/star.png"
+               [alt]="STARS"/>
+          <img class="star _middle"
+               [class._middle-active]="item.isActive"
+               [class._middle-deactive]="item.isDeActive"
+               src="/assets/star.png"
+               [alt]="STARS"/>
+          <img class="star _bigger"
+               [class._bigger-active]="item.isActive"
+               [class._bigger-deactive]="item.isDeActive"
+               src="/assets/star.png"
+               [alt]="STARS"/>
+        </div>
+      </div>
+    </ng-container>
   </div>
-  <div class="navigation__buttons">
-    <button class="button-line">Discord</button>
-    <button class="button-sub">Вконтакте</button>
+  <div class="navigation__buttons"
+  >
+    <button class="button-line"
+            (mousemove)="changeFocus('top','in')"
+            (mouseleave)="changeFocus('top','out')">{{title.first}}
+    </button>
+    <button class="button-sub"
+            (mousemove)="changeFocus('bottom','in')"
+            (mouseleave)="changeFocus('bottom','out')">{{title.second}}
+    </button>
   </div>
 </div>
