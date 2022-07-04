@@ -2,6 +2,8 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {MainComponent} from "../pages/main/main.component";
 import {InformationComponent} from "../pages/information/information.component";
+import {RulesComponent} from "../pages/rules/rules.component";
+import {StreamComponent} from "../pages/stream/stream.component";
 
 const routes: Routes = [
   {
@@ -11,6 +13,14 @@ const routes: Routes = [
   {
     path: 'play',
     component: InformationComponent,
+  },
+  {
+    path: 'rules',
+    component: RulesComponent,
+  },
+  {
+    path: 'stream',
+    component: StreamComponent,
   },
   {path: '', redirectTo: 'main', pathMatch: 'full'},
 ];

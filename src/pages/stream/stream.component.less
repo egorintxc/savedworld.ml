@@ -1,0 +1,118 @@
+.stream {
+  background: #2F2D32;
+  width: 100%;
+  height: 100vh;
+
+  &__template {
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/stream_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .title {
+      display: flex;
+      align-items: center;
+      padding-top: 160px;
+      padding-left: 102px;
+
+      span {
+        margin-right: 40px;
+        font-family: 'Rubik', serif;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 96px;
+        line-height: 110px;
+        align-items: flex-end;
+        text-transform: uppercase;
+        background: linear-gradient(90deg, #952AEC 20.41%, #7930FF 90.36%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+      }
+    }
+
+    .subtitle {
+      padding-left: 102px;
+      width: 736px;
+      display: inline-block;
+      margin-top: 30px;
+      font-family: 'Rubik', serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 26px;
+      color: #828282;
+    }
+
+    .list {
+      display: flex;
+      align-items: center;
+      padding-left: 102px;
+      margin-top: 60px;
+      &__item {
+        display: flex;
+        flex-direction: column;
+        margin-right: 110px;
+        width: 285.87px;
+        height: 252.6px;
+        box-shadow: 0 4px 40px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+
+        &._purple {
+          background: #7930FF;
+        }
+
+        &._yellow {
+          background: #E6BC2A;
+        }
+        &-title{
+          display: inline-block;
+          margin-top: 10px;
+          font-family: 'Rubik', serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 26px;
+          text-align: center;
+          &._green{
+            color: #59E05E;
+          }
+          &._purple{
+            background: linear-gradient(90deg, #952AEC 20.41%, #7930FF 90.36%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+          }
+        }
+        &-subtitle{
+          display: inline-block;
+          margin-top: 5px;
+          font-family: 'Rubik', serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 18px;
+          text-align: center;
+          &._white{
+            color: #F2F2F2;
+          }
+          &._black{
+            color: #333333;
+          }
+        }
+        &-icon{
+          &._egor{
+            margin-top: 18px;
+          }
+          &._jas{
+            margin-top: -14px;
+          }
+        }
+      }
+    }
+  }
+
+}

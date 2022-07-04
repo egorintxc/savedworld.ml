@@ -13,8 +13,8 @@
     <ng-container *ngFor="let item of linkArray">
       <div class="link"
            [routerLink]="item.id"
-           (click)="changePosition($event, item.id)"
-           [class._active]="item.isActive">
+           routerLinkActive="_active"
+           (click)="changePosition($event, item.id)">
         <span>{{item.title}}</span>
         <div *ngIf="item.isActive">
           <img class="star _low"
