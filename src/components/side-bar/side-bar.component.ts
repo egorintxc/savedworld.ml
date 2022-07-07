@@ -14,7 +14,7 @@ export class SideBarComponent implements OnInit {
     {id: 'rules', title: 'Правила', isActive: false, isRoute: false, isDeActive: false},
     {id: 'stream', title: 'Стримеры', isActive: false, isRoute: false, isDeActive: false},
     {id: 'play', title: 'Начать играть', isActive: false, isRoute: false, isDeActive: false},
-    {id: 'call', title: 'Связаться с нами', isActive: false, isRoute: false, isDeActive: false},
+    // {id: 'call', title: 'Связаться с нами', isActive: false, isRoute: false, isDeActive: false},
   ]
   lastActiveID = 'main';
   constructor(  private router: Router,) {

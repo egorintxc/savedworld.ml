@@ -7,13 +7,16 @@ import {NewsComponent} from "./news/news.component";
 import {RulesComponent} from "./rules/rules.component";
 import {CommonModule} from "@angular/common";
 import {StreamComponent} from "./stream/stream.component";
+import {RouterModule} from "@angular/router";
+import {StepsComponent} from "./information/components/steps/steps.component";
 
 @NgModule({
   imports: [
     ComponentsModule,
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
-  declarations: [MainComponent, InformationComponent, HeaderComponent, NewsComponent, RulesComponent, StreamComponent],
+  declarations: [MainComponent, InformationComponent, HeaderComponent, NewsComponent, RulesComponent, StreamComponent, StepsComponent],
   exports: [MainComponent]
 })
 export class PagesModel {
