@@ -1,6 +1,6 @@
 .navigation {
-  background: rgba(0, 0, 0, 0.33);
-  //margin-top: 30px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
   padding: 50px 50px 40px 50px;
   display: flex;
   width: 100%;
@@ -58,10 +58,10 @@
 
       &__second {
         -webkit-transition: 1s;
-        font-weight: 400;
-        font-size: 10px;
+        font-weight: 800;
+        font-size: 12px;
         line-height: 12px;
-        letter-spacing: 0.49em;
+        letter-spacing: 0.29em;
         background: linear-gradient(90deg, #952AEC 20.41%, #7930FF 90.36%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -89,7 +89,7 @@
 
       .text__second {
         transition: 1s;
-        font-size: 12px;
+        font-size: 14px;
       }
     }
 
@@ -104,7 +104,7 @@
       align-items: center;
       justify-content: center;
       padding: 0 5px;
-      width: 121px;
+      width: 150px;
       height: 44px;
       border-radius: 15px;
       transition: 1s;
@@ -114,7 +114,7 @@
 
       span {
         transition: 1s;
-        color: #828282;
+        color: #ffffff;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -268,15 +268,15 @@
       &._active {
         border-radius: 100px;
         border: 1px solid transparent;
-        background: linear-gradient(90deg, #892CF4 0%, #7930FF 100%);
-        transition: 1s;
+        background: #6F4EFB;
+        transition: 2s;
         animation: active 2s;
         @keyframes active {
           from {
             background: transparent;
           }
           to {
-            background: linear-gradient(90deg, #892CF4 0%, #7930FF 100%);
+            background: #6F4EFB;
             opacity: 100%;
           }
         }
@@ -291,42 +291,51 @@
   }
 
   &__buttons {
-    position: relative;
-    .button-line {
-      cursor: pointer;
-      position: absolute;
-      top: -22px;
-      left: -15px;
-      font-style: italic;
-      font-weight: 300;
-      font-size: 14px;
-      line-height: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #E5E5E5;
-      box-shadow: 0 4px 20px rgba(115, 205, 0, 0.1);
-      width: 180px;
-      height: 44px;
-      border-radius: 22px;
-      background: url('/assets/mask-button.png'), linear-gradient(90deg, #A748B7 37.53%, #882398 90.36%);;
-    }
+    display: flex;
+    align-items: center;
+    width: 200px;
 
-    .button-sub {
+    .icon {
       cursor: pointer;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 18px;
-      display: flex;
-      padding-top: 29px;
-      justify-content: center;
-      text-align: center;
-      color: #2892C8;
-      width: 164px;
-      height: 58px;
-      background: #F1FBF8;
-      border-radius: 0px 0px 22px 22px;
+
+      &__discord {
+        margin-right: 25px;
+        ::ng-deep path{
+          transition: 1s;
+        }
+        &:hover {
+          ::ng-deep path{
+            transition: 1s;
+            fill: #5865f2;
+          }
+        }
+      }
+      &__msg {
+        margin-left: 26px;
+        ::ng-deep path{
+          transition: 1s;
+        }
+        &:hover {
+          ::ng-deep path{
+            transition: 1s;
+            fill: #48B760;
+          }
+        }
+      }
+
+      &__vk {
+        width: 44px;
+        height: 29px;
+        ::ng-deep path{
+          transition: 1s;
+        }
+        &:hover {
+          ::ng-deep path{
+            transition: 1s;
+            fill: #0077ff;
+          }
+        }
+      }
     }
   }
 }
