@@ -9,6 +9,7 @@ import {CommonModule} from "@angular/common";
 import {StreamComponent} from "./stream/stream.component";
 import {RouterModule} from "@angular/router";
 import {StepsComponent} from "./information/components/steps/steps.component";
+import {ServersComponent} from "./servers/servers.component";
 
 @NgModule({
   imports: [
@@ -16,7 +17,11 @@ import {StepsComponent} from "./information/components/steps/steps.component";
     CommonModule,
     RouterModule
   ],
-  declarations: [MainComponent, InformationComponent, HeaderComponent, NewsComponent, RulesComponent, StreamComponent, StepsComponent],
+  declarations: [MainComponent,
+    InformationComponent,
+    HeaderComponent, NewsComponent, RulesComponent, StreamComponent,
+    StepsComponent,
+    ServersComponent],
   exports: [MainComponent]
 })
 export class PagesModel {

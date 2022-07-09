@@ -1,12 +1,33 @@
 .information {
   height: 100%;
   flex-direction: column;
-  padding:  122px 50px 0 ;
+  padding: 122px 50px 0;
   display: flex;
   justify-content: space-between;
-  background: linear-gradient(180deg, #242325 1.04%, #55398C 36.46%, #4C6AD2 69.27%, #C9F5FF 99.99%, #CFF1FF 100%);&__text {
+  background: linear-gradient(180deg, #0E1116 0%, #581CCE 45.31%, #5F8CFE 80.21%, #C9F5FF 99.99%, #CFF1FF 100%);
+  position: relative;
+  &__moon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    //z-index: 1;
+    background-image: url('/assets/moon.png');
+    background-repeat: no-repeat;
+    background-position: -150px -150px;
+  }
+
+  &__container {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+  }
+
+  &__text {
     margin-top: 145px;
-    width: 100%;
 
     .title {
       display: flex;
@@ -71,7 +92,7 @@
     display: flex;
     align-items: flex-end;
     width: 682px;
-    margin-left: -270px;
+    //margin-left: -270px;
 
     .slide {
       &__title {

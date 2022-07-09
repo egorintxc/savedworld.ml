@@ -6,11 +6,14 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./header.component.less']
 })
 export class HeaderComponent implements OnInit {
-  text: string = 'клик для копирования';
-
+  isTextVisible: boolean = true;
+  widthProgressBar: number = 0;
+  maxWidthProgressBar = 380;
   constructor() {
   }
-
+  getWidthProgressBar():string{
+    return this.widthProgressBar+'px'
+  }
   ngOnInit(): void {
   }
 
@@ -27,10 +30,18 @@ export class HeaderComponent implements OnInit {
     document.execCommand('copy');
     document.body.removeChild(selBox);
     setTimeout(() => {
-      this.text = 'успешно скопировано'
-    }, 200)
+      this.isTextVisible = false;
+
+    }, 200);
+    let timer = setInterval(() => {
+      this.widthProgressBar++;
+      if (this.widthProgressBar === this.maxWidthProgressBar) {
+        clearInterval(timer);
+        this.widthProgressBar = 0;
+      }
+    }, 13);
     setTimeout(() => {
-      this.text = 'клик для копирования'
-    }, 10000)
+      this.isTextVisible = true;
+    }, 5000)
   }
 }

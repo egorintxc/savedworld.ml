@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Link} from "../../modules/link";
-import { Router} from "@angular/router";
+import {Router} from "@angular/router";
+import {SidebarService} from "../../services/sidebar.service";
 
 @Component({
   selector: 'app-side-bar',
@@ -11,14 +12,17 @@ export class SideBarComponent implements OnInit {
   public readonly STARS = 'stars';
   public linkArray: Array<Link> = [
     {id: 'main', title: 'Главная', isActive: false, isRoute: false, isDeActive: false},
+    {id: 'servers', title: 'Наши сервера', isActive: false, isRoute: false, isDeActive: false},
     {id: 'rules', title: 'Правила', isActive: false, isRoute: false, isDeActive: false},
     {id: 'stream', title: 'Стримеры', isActive: false, isRoute: false, isDeActive: false},
     {id: 'play', title: 'Начать играть', isActive: false, isRoute: false, isDeActive: false},
-    // {id: 'call', title: 'Связаться с нами', isActive: false, isRoute: false, isDeActive: false},
   ]
-  lastActiveID = 'main';
-  constructor(  private router: Router,) {
+  public lastActiveID = 'main';
+
+  constructor(private router: Router,
+              private sideBarService: SidebarService) {
   }
+
   ngOnInit(): void {
     setTimeout(() => {
       this.lastActiveID = this.router.url.substr(1);
@@ -26,6 +30,16 @@ export class SideBarComponent implements OnInit {
         item.id === this.lastActiveID ? item.isActive = true : item.isActive = false;
       })
     }, 50)
+    this.sideBarService.handleChangeStars.subscribe(
+      ()=>{
+        setTimeout(() => {
+          this.lastActiveID = this.router.url.substr(1);
+          this.linkArray.map((item: Link) => {
+            item.id === this.lastActiveID ? item.isActive = true : item.isActive = false;
+          })
+        }, 50)
+      }
+    )
   }
 
   changePosition(event: any, id: string) {

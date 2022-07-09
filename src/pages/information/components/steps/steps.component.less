@@ -6,8 +6,8 @@
     .text {
       display: flex;
       flex-direction: column;
-      margin-left: 70px;
-      top: 118px;
+      margin-left: 150px;
+      top: 50px;
       left: 0;
       position: relative;
 
@@ -39,14 +39,14 @@
 
       &__island {
         &._first {
-          animation: move-low 3s;
+          animation: min_island_down_slow 10s;
           animation-iteration-count: infinite;
-          @keyframes move-low {
+          @keyframes min_island_down_slow {
             0% {
               transform: translateY(0)
             }
             50% {
-              transform: translateY(25px)
+              transform: translateY(35px)
             }
             100% {
               transform: translateY(0)
@@ -56,17 +56,17 @@
         }
 
         &._second {
-          animation: move-low 3s;
+          animation: island_down_slow 8s;
           animation-iteration-count: infinite;
           position: absolute;
           bottom: 20px;
           right: 300px;
-          @keyframes move-low {
+          @keyframes island_down_slow {
             0% {
               transform: translateY(0)
             }
             50% {
-              transform: translateY(25px)
+              transform: translateY(55px)
             }
             100% {
               transform: translateY(0)
@@ -108,15 +108,18 @@
         }
 
         &._second {
-          animation: move-by-x-low 40s;
+          animation: move-by-x-low 20s;
           animation-iteration-count: infinite;
-          z-index: 2;
+          z-index: 4;
           @keyframes move-by-x-low {
             0% {
               transform: translateX(0)
             }
+            50% {
+              transform: translateX(-200px)
+            }
             100% {
-              transform: translateX(-1895px)
+              transform: translateX(0)
             }
             /*100% {
               transform: translateX(0)
@@ -160,17 +163,17 @@
       margin-top: 30px;
       width: 258px;
       height: 158px;
-      animation: slow_fall 3s;
+      animation: slow_fall_cloud 3s;
       animation-iteration-count: infinite;
-      @keyframes slow_fall {
+      @keyframes slow_fall_cloud {
         0% {
-          transform: translateY(0)
+          transform: translateX(0)
         }
         50% {
-          transform: translateY(15px)
+          transform: translateX(15px)
         }
         100% {
-          transform: translateY(0)
+          transform: translateX(0)
         }
       }
 
@@ -221,15 +224,18 @@
         margin-right: 100px;
         width: 368px;
         height: 112px;
-        animation: slow-draw 35s;
-        @keyframes slow-draw {
+        animation: slow-draw-row 15s;
+        animation-iteration-count: infinite;
+        @keyframes slow-draw-row {
           0% {
             transform: translateX(0)
           }
-          100% {
-            transform: translateX(-1905px)
+          50% {
+            transform: translateX(-205px)
           }
-
+          100% {
+            transform: translateX(0)
+          }
         }
       }
 
@@ -284,7 +290,6 @@
 
     .image {
       margin-left: 150px;
-
       &__island {
         z-index: 4;
         animation: slow_fall 15s;
@@ -308,21 +313,51 @@
     display: flex;
     //justify-content: space-between;
     .images{
+      //position: relative;
+      margin-left: 560px;
+      &__start-cloud{
+        display: block;
+        z-index: 4;
+        animation: cloud_right 122s;
+        animation-iteration-count: infinite;
+        @keyframes cloud_right {
+          0% {
+            transform: translateX(0)
+          }
+          50% {
+            transform: translateX(95px)
+          }
+          100% {
+            transform: translateX(0)
+          }
+        }
+      }
       &__men{
-        margin-left: 300px;
+        z-index: 1;
+        margin-bottom: -137px;
         width: 194px;
         height: 117px;
+        animation: men_down 122s;
+        animation-iteration-count: infinite;
+        @keyframes men_down {
+          0% {
+            transform: translateY(0)
+          }
+          50% {
+            transform: translateY(435px)
+          }
+          100% {
+            transform: translateY(0)
+          }
+        }
       }
-    }
-    .container{
-
     }
     .text {
       position: relative;
       margin-top: 100px;
       display: flex;
       flex-direction: column;
-      margin-left: 70px;
+      margin-left: 150px;
 
       &__title {
         line-height: 33px;
@@ -343,6 +378,11 @@
         font-size: 20px;
         line-height: 33px;
         color: #FFFFFF;
+        &>.link{
+          color:#f8d722;
+          cursor: pointer;
+          font-weight: bold;
+        }
       }
     }
   }
@@ -352,6 +392,36 @@
     margin-bottom: 140px;
     display: flex;
     justify-content: space-around;
+    .cloud{
+      animation: cloud_slow_right 20s;
+      animation-iteration-count: infinite;
+      @keyframes cloud_slow_right {
+        0% {
+          transform: translateX(0)
+        }
+        50% {
+          transform: translateX(95px)
+        }
+        100% {
+          transform: translateX(0)
+        }
+      }
+    }
+    .island {
+      animation: slow_fall-island 20s;
+      animation-iteration-count: infinite;
+      @keyframes slow_fall-island {
+        0% {
+          transform: translateY(0)
+        }
+        50% {
+          transform: translateY(15px)
+        }
+        100% {
+          transform: translateY(0)
+        }
+      }
+    }
     .cloud{
       margin-left: 70px;
     }

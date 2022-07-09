@@ -4,6 +4,7 @@ import {MainComponent} from "../pages/main/main.component";
 import {InformationComponent} from "../pages/information/information.component";
 import {RulesComponent} from "../pages/rules/rules.component";
 import {StreamComponent} from "../pages/stream/stream.component";
+import {ServersComponent} from "../pages/servers/servers.component";
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'play',
     component: InformationComponent,
+  },
+  {
+    path: 'servers',
+    component: ServersComponent,
   },
   {
     path: 'rules',

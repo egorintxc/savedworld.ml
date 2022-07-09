@@ -5,11 +5,50 @@
   align-items: center;
   flex-direction: column;
 
+  .container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+  }
+
+  &__progress-bar {
+    //width: 20px;
+    background: white;
+    height: 5px;
+  }
+
   &__link {
     cursor: pointer;
     margin-top: 280px;
     background: transparent;
     text-align: center;
+    .fade{
+      animation: slow_fall-island 3s;
+      @keyframes slow_fall-island {
+        0% {
+         opacity: 0;
+        }
+        100% {
+          opacity: 100%;
+        }
+      }
+    }
+    .fade_copy{
+      animation: slow 4.8s;
+      @keyframes slow {
+        0% {
+         opacity: 0;
+        }
+        50% {
+          opacity: 100%;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    }
     span {
       display: inline-block;
       margin-top: 20px;
