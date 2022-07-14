@@ -10,9 +10,10 @@ import {StreamComponent} from "./stream/stream.component";
 import {RouterModule} from "@angular/router";
 import {StepsComponent} from "./information/components/steps/steps.component";
 import {ServersComponent} from "./servers/servers.component";
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 @NgModule({
   imports: [
+    BrowserAnimationsModule,
     ComponentsModule,
     CommonModule,
     RouterModule
