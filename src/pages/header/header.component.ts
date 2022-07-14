@@ -1,11 +1,14 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
+
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.less']
+  styleUrls: ['./header.component.less'],
+
 })
 export class HeaderComponent implements OnInit {
+
   isTextVisible: boolean = true;
   widthProgressBar: number = 0;
   maxWidthProgressBar = 380;

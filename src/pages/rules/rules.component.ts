@@ -1,11 +1,18 @@
-import {Component} from '@angular/core';
+import {Component, HostBinding} from '@angular/core';
+import {RoutingAnimation} from "../../shared/animations/routing-animation";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-rules',
   templateUrl: './rules.component.html',
-  styleUrls: ['./rules.component.less']
+  styleUrls: ['./rules.component.less'],
+  animations: [RoutingAnimation],
 })
 export class RulesComponent {
+  @HostBinding('@routingAnimation') private routing: any;
+  constructor(private titleService:Title) {
+    this.titleService.setTitle("SavedWorld - Правила");
+  }
   listOfRules: Array<{ id: number; title: string, subTitle: string }> = [
     {id:1,title: 'Мы за равенство',subTitle:'У нас все игроки равны. Вне зависимости от служебного положения или количества финансовой поддержки. Мы защищаем интересы абсолютно каждого игрока на нашем сервере'},
     {id:2,title: 'Мы за адекватность',subTitle:'Уважайте свои интересы и интересы других игроков.  Не ставьте себя выше остальных в любом контексте. Чрезмерная токсичность и неадекватность у нас неприемлема, как и использования бан-вордов в лексиконе'},
